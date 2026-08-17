@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>✦ Donde la Noche Se Rindió Ante la Forma en Que Te Amo ✦</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --night:#070612;
+    --deep:#0e0a1d;
+    --violet:#8f68c9;
+    --soft:#d9c9f2;
+    --white:#f8f2ff;
+    --muted:#a89bbd;
+    --gold:#d9b878;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    color:var(--white);
+    background:
+        radial-gradient(circle at 50% 12%, rgba(130,82,190,.20), transparent 25%),
+        radial-gradient(circle at 15% 70%, rgba(92,54,150,.12), transparent 30%),
+        radial-gradient(circle at 85% 45%, rgba(157,99,200,.10), transparent 28%),
+        linear-gradient(145deg,#05040c,#0c0818 45%,#05040c);
+    font-family:"Cormorant Garamond",serif;
+    overflow-x:hidden;
+}
+
+/* CIELO */
+
+.sky{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+    overflow:hidden;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:#fff;
+    border-radius:50%;
+    opacity:.45;
+    animation:twinkle 4s infinite ease-in-out;
+}
+
+.star:nth-child(1){left:8%;top:12%;animation-delay:.5s}
+.star:nth-child(2){left:18%;top:38%;animation-delay:1.8s}
+.star:nth-child(3){left:27%;top:8%;animation-delay:2.4s}
+.star:nth-child(4){left:39%;top:27%;animation-delay:.8s}
+.star:nth-child(5){left:52%;top:10%;animation-delay:3s}
+.star:nth-child(6){left:63%;top:33%;animation-delay:1.2s}
+.star:nth-child(7){left:74%;top:15%;animation-delay:2.2s}
+.star:nth-child(8){left:86%;top:42%;animation-delay:.3s}
+.star:nth-child(9){left:94%;top:19%;animation-delay:1.5s}
+.star:nth-child(10){left:12%;top:78%;animation-delay:2.7s}
+.star:nth-child(11){left:32%;top:88%;animation-delay:1s}
+.star:nth-child(12){left:57%;top:76%;animation-delay:3.2s}
+.star:nth-child(13){left:81%;top:83%;animation-delay:1.7s}
+.star:nth-child(14){left:91%;top:68%;animation-delay:.9s}
+
+@keyframes twinkle{
+    0%,100%{opacity:.18;transform:scale(.7)}
+    50%{opacity:.9;transform:scale(1.5)}
+}
+
+/* CONTENEDOR */
+
+.poem{
+    position:relative;
+    z-index:2;
+    width:min(900px,92%);
+    margin:auto;
+    padding:70px 0 100px;
+}
+
+/* ENCABEZADO */
+
+.intro{
+    min-height:92vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
+
+.moon{
+    width:95px;
+    height:95px;
+    border-radius:50%;
+    background:
+        radial-gradient(circle at 32% 30%,#fff 0%,#eadcff 38%,#b995df 70%,#76509f 100%);
+    box-shadow:
+        0 0 30px rgba(198,161,240,.35),
+        0 0 90px rgba(146,91,198,.18);
+    margin-bottom:45px;
+    position:relative;
+}
+
+.moon:after{
+    content:"";
+    position:absolute;
+    width:95px;
+    height:95px;
+    border-radius:50%;
+    background:#080611;
+    left:27px;
+    top:-8px;
+}
+
+.eyebrow{
+    font-family:"Cinzel",serif;
+    font-size:.72rem;
+    letter-spacing:5px;
+    color:var(--gold);
+    margin-bottom:25px;
+    text-transform:uppercase;
+}
+
+h1{
+    font-family:"Cinzel",serif;
+    font-size:clamp(1.8rem,5vw,3.5rem);
+    line-height:1.35;
+    letter-spacing:2px;
+    max-width:800px;
+    text-shadow:0 0 35px rgba(190,146,238,.22);
+}
+
+.date{
+    margin-top:27px;
+    color:var(--muted);
+    font-size:1.1rem;
+    letter-spacing:3px;
+}
+
+.apodo{
+    margin-top:42px;
+    color:var(--soft);
+    font-size:1.35rem;
+    font-style:normal;
+}
+
+.apodo span{
+    color:var(--gold);
+}
+
+/* DIVISOR */
+
+.divider{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin:20px 0 80px;
+}
+
+.divider:before,
+.divider:after{
+    content:"";
+    height:1px;
+    flex:1;
+    background:linear-gradient(to right,transparent,rgba(180,138,220,.5));
+}
+
+.divider:after{
+    background:linear-gradient(to left,transparent,rgba(180,138,220,.5));
+}
+
+.divider span{
+    color:var(--gold);
+    font-size:1rem;
+}
+
+/* ESTROFAS */
+
+.stanza{
+    margin:0 auto 75px;
+    max-width:720px;
+    text-align:center;
+    opacity:0;
+    transform:translateY(25px);
+    animation:appear 1.2s forwards;
+}
+
+.stanza:nth-of-type(2){animation-delay:.15s}
+.stanza:nth-of-type(3){animation-delay:.3s}
+.stanza:nth-of-type(4){animation-delay:.45s}
+
+@keyframes appear{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.stanza p{
+    font-size:clamp(1.22rem,2.8vw,1.55rem);
+    line-height:1.85;
+    letter-spacing:.25px;
+}
+
+.stanza strong{
+    display:block;
+    font-family:"Cinzel",serif;
+    font-size:clamp(1.5rem,4vw,2.2rem);
+    color:#e5d3fa;
+    margin:28px 0;
+    letter-spacing:4px;
+}
+
+/* FRASES DESTACADAS */
+
+.breath{
+    min-height:330px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    margin:100px auto;
+    position:relative;
+}
+
+.breath:before{
+    content:"";
+    position:absolute;
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(136,82,184,.16),transparent 70%);
+    filter:blur(4px);
+}
+
+.breath-text{
+    position:relative;
+    font-family:"Cinzel",serif;
+    font-size:clamp(1.5rem,4vw,2.3rem);
+    line-height:1.7;
+    letter-spacing:2px;
+    max-width:650px;
+}
+
+.breath-text span{
+    color:var(--gold);
+}
+
+/* LISTA POÉTICA */
+
+.fragments{
+    max-width:600px;
+    margin:90px auto;
+    text-align:left;
+}
+
+.fragment{
+    padding:22px 0;
+    border-bottom:1px solid rgba(183,139,221,.12);
+    font-size:1.35rem;
+    line-height:1.7;
+    position:relative;
+    padding-left:35px;
+}
+
+.fragment:before{
+    content:"✦";
+    position:absolute;
+    left:0;
+    top:24px;
+    color:var(--gold);
+    font-size:.7rem;
+}
+
+/* CARTA NOCTURNA */
+
+.night-verse{
+    margin:100px auto;
+    padding:65px 35px;
+    max-width:760px;
+    text-align:center;
+    border-top:1px solid rgba(205,171,236,.2);
+    border-bottom:1px solid rgba(205,171,236,.2);
+    background:radial-gradient(circle at center,rgba(120,75,170,.09),transparent 72%);
+}
+
+.night-verse p{
+    font-size:clamp(1.25rem,3vw,1.55rem);
+    line-height:1.9;
+}
+
+.night-verse em{
+    color:var(--gold);
+    font-style:normal;
+}
+
+/* CIERRE */
+
+.final{
+    min-height:85vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.final-symbol{
+    font-size:2rem;
+    color:var(--gold);
+    margin-bottom:35px;
+    animation:pulse 3s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{opacity:.45;transform:scale(.9)}
+    50%{opacity:1;transform:scale(1.1)}
+}
+
+.final p{
+    max-width:700px;
+    font-size:clamp(1.35rem,3vw,1.7rem);
+    line-height:1.9;
+}
+
+.final .last{
+    margin-top:55px;
+    font-family:"Cinzel",serif;
+    font-size:clamp(1.5rem,4vw,2.3rem);
+    color:#e6d5fa;
+    letter-spacing:3px;
+    line-height:1.7;
+}
+
+/* FIRMA */
+
+.signature{
+    margin-top:60px;
+    color:var(--muted);
+    font-size:1rem;
+    letter-spacing:4px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:600px){
+
+    .poem{
+        width:88%;
+        padding-top:40px;
+    }
+
+    .intro{
+        min-height:90vh;
+    }
+
+    .moon{
+        width:75px;
+        height:75px;
+    }
+
+    .moon:after{
+        width:75px;
+        height:75px;
+        left:22px;
+        top:-6px;
+    }
+
+    .divider{
+        margin-bottom:60px;
+    }
+
+    .stanza{
+        margin-bottom:60px;
+    }
+
+    .stanza p{
+        line-height:1.75;
+    }
+
+    .breath{
+        margin:70px auto;
+        min-height:280px;
+    }
+
+    .fragments{
+        margin:70px auto;
+    }
+
+    .night-verse{
+        padding:45px 15px;
+        margin:75px auto;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sky">
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+</div>
+
+<main class="poem">
+
+    <section class="intro">
+
+        <div class="moon"></div>
+
+        <div class="eyebrow">Domingo · 16 · Agosto · 2026</div>
+
+        <h1>
+            ✦ DONDE LA NOCHE SE RINDIÓ<br>
+            ANTE LA FORMA EN QUE TE AMO ✦
+        </h1>
+
+        <div class="date">
+            Una noche escrita únicamente para ti
+        </div>
+
+        <div class="apodo">
+            Para ti, mi <span>Eclipse de Azúcar y Estrellas</span> ✦
+        </div>
+
+    </section>
+
+
+    <div class="divider">
+        <span>✦</span>
+    </div>
+
+
+    <section class="stanza">
+
+        <p>
+            Esta noche<br>
+            no quiero escribirte un poema,<br>
+            quiero dejarte una parte de mi corazón<br>
+            entre estas palabras,<br>
+            para que cuando las leas<br>
+            sientas que mis brazos te están buscando<br>
+            aunque la distancia no me deje alcanzarte.
+        </p>
+
+        <strong>Porque amarte<br>se me volvió una manera de respirar.</strong>
+
+        <p>
+            Y hay noches como esta<br>
+            en las que tu nombre llega a mi pensamiento<br>
+            sin pedir permiso,<br>
+            se queda en mi pecho<br>
+            y convierte cada latido<br>
+            en una pequeña declaración de amor.
+        </p>
+
+    </section>
+
+
+    <section class="breath">
+
+        <div class="breath-text">
+            <span>Tú.</span><br><br>
+            Solamente tú<br>
+            tienes esa manera extraña y preciosa<br>
+            de hacer que mi mundo parezca más bonito<br>
+            sin siquiera estar aquí.
+        </div>
+
+    </section>
+
+
+    <section class="stanza">
+
+        <p>
+            Si pudiera regalarte algo esta noche,<br>
+            no te regalaría una estrella,<br>
+            porque sería demasiado pequeña<br>
+            para todo lo que siento.
+        </p>
+
+        <strong>
+            Te regalaría la noche entera.
+        </strong>
+
+        <p>
+            Con sus silencios,<br>
+            sus constelaciones,<br>
+            su luna escondida entre las nubes,<br>
+            y le pediría al universo<br>
+            que escribiera tu nombre<br>
+            en cada rincón donde todavía exista luz.
+        </p>
+
+    </section>
+
+
+    <section class="fragments">
+
+        <div class="fragment">
+            Mi corazón te reconoció mucho antes
+            de que yo entendiera que estaba enamorándome.
+        </div>
+
+        <div class="fragment">
+            Tus ojos se volvieron mi debilidad.
+        </div>
+
+        <div class="fragment">
+            Tu sonrisa terminó convirtiéndose
+            en uno de mis lugares favoritos.
+        </div>
+
+        <div class="fragment">
+            Y tu nombre encontró una habitación
+            dentro de mí de la que jamás quiero que se vaya.
+        </div>
+
+    </section>
+
+
+    <section class="stanza">
+
+        <p>
+            Y mírame ahora...
+        </p>
+
+        <strong>Amándote más de lo que sé explicar.</strong>
+
+        <p>
+            Amándote en los días fáciles<br>
+            y en los días difíciles.<br><br>
+
+            Amándote cuando puedo abrazarte<br>
+            y también cuando solamente puedo extrañarte.<br><br>
+
+            Amándote cuando sonríes<br>
+            y queriendo ser refugio<br>
+            cuando el mundo consigue hacerte daño.
+        </p>
+
+    </section>
+
+
+    <section class="breath">
+
+        <div class="breath-text">
+            Porque yo no quiero solamente<br>
+            los momentos bonitos contigo.
+            <br><br>
+            <span>Te quiero a ti.</span>
+            <br>
+            Completa.
+        </div>
+
+    </section>
+
+
+    <section class="stanza">
+
+        <p>
+            Con tus días buenos,<br>
+            con tus cansancios,<br>
+            con tus silencios,<br>
+            con tus sueños,<br>
+            con tus pequeñas locuras,<br>
+            con cada versión de ti<br>
+            que todavía no conozco<br>
+            y con todas las que algún día<br>
+            tendré la suerte de descubrir.
+        </p>
+
+        <strong>
+            Quiero seguir aprendiendo<br>
+            la forma exacta de tu sonrisa.
+        </strong>
+
+        <p>
+            Quiero seguir encontrando<br>
+            nuevas razones para besarte.<br><br>
+
+            Quiero seguir descubriendo<br>
+            lugares donde mi mano encaje con la tuya.
+        </p>
+
+    </section>
+
+
+    <section class="night-verse">
+
+        <p>
+            Y quiero que, cuando alguna noche<br>
+            te preguntes cuánto te amo,<br>
+            recuerdes que existe alguien<br>
+            que podría pasar horas intentando explicarlo<br>
+            y aun así sentiría<br>
+            que le faltaron palabras.
+            <br><br>
+
+            Porque te amo<br>
+            más allá de las palabras.
+            <br><br>
+
+            Te amo en ese lugar<br>
+            donde ya no existen las medidas.
+            <br><br>
+
+            Donde un minuto contigo<br>
+            puede sentirse como un universo<br>
+            y una noche sin ti<br>
+            puede parecer demasiado larga.
+        </p>
+
+    </section>
+
+
+    <section class="stanza">
+
+        <strong>
+            Mi Eclipse de Azúcar y Estrellas...
+        </strong>
+
+        <p>
+            Si alguna vez dudas de cuánto significas para mí,<br>
+            mira hacia arriba esta noche.
+            <br><br>
+
+            Quizás encuentres una estrella distinta.
+            <br><br>
+
+            Una que brille un poquito más.<br>
+            Una que parezca guardar un secreto.
+        </p>
+
+    </section>
+
+
+    <section class="breath">
+
+        <div class="breath-text">
+
+            Esa será mi manera de decirte:
+
+            <br><br>
+
+            <span>
+                “Aquí estoy, amor mío.<br>
+                Pensándote.<br>
+                Extrañándote.<br>
+                Deseándote cerca.<br>
+                Y amándote con todo lo que soy.”
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <section class="stanza">
+
+        <p>
+            Y si la noche pudiera hablar,<br>
+            creo que también terminaría diciéndote tu nombre.
+            <br><br>
+
+            Porque incluso el cielo<br>
+            parece quedarse pequeño<br>
+            cuando intento explicarle<br>
+            todo lo que provocas en mi corazón.
+        </p>
+
+        <strong>
+            No necesito pedirle otra estrella,<br>
+            ni otra luna,<br>
+            ni otro milagro.
+        </strong>
+
+        <p>
+            Ya me dio el más hermoso<br>
+            cuando puso tu nombre<br>
+            en mi camino.
+        </p>
+
+    </section>
+
+
+    <section class="night-verse">
+
+        <p>
+
+            Y si pudiera elegir solamente una cosa<br>
+            para conservar hasta el final de mi vida,<br>
+            elegiría este sentimiento:
+            <br><br>
+
+            <em>
+                la certeza de que, entre millones de personas,<br>
+                mi corazón encontró en ti<br>
+                a su lugar favorito.
+            </em>
+
+        </p>
+
+    </section>
+
+
+    <section class="stanza">
+
+        <p>
+            Quédate un poquito más en mis pensamientos esta noche.
+            <br><br>
+
+            Déjame amarte desde aquí.
+            <br><br>
+
+            Déjame imaginar que te abrazo,<br>
+            que acerco mi frente a la tuya,<br>
+            que te miro a los ojos<br>
+            y te digo bajito,<br>
+            para que solamente tú puedas escucharlo:
+        </p>
+
+        <strong>Te amo.</strong>
+
+        <p>
+            No como una frase.
+            <br><br>
+
+            No como una costumbre.
+            <br><br>
+
+            No como algo que se dice porque sí.
+            <br><br>
+
+            Te amo como se ama aquello<br>
+            que uno jamás quiere perder.
+            <br><br>
+
+            Como se cuida aquello<br>
+            que el corazón considera irremplazable.
+            <br><br>
+
+            Como se mira al cielo<br>
+            cuando por fin comprende<br>
+            que algunas cosas hermosas<br>
+            no necesitan explicación.
+        </p>
+
+    </section>
+
+
+    <section class="final">
+
+        <div class="final-symbol">✦</div>
+
+        <p>
+            Y tú, mi amor,<br>
+            eres precisamente eso:
+            <br><br>
+
+            mi cosa más hermosa,<br>
+            mi pensamiento más constante,<br>
+            mi deseo más dulce,<br>
+            mi refugio más querido<br>
+            y el lugar donde mi corazón<br>
+            siempre quiere volver.
+        </p>
+
+        <div class="last">
+            Esta noche termina algún día.<br>
+            Pero mi amor por ti<br>
+            no sabe de calendarios.
+        </div>
+
+        <div class="signature">
+            ✦ DOMINGO · 16 DE AGOSTO · 2026 ✦
+        </div>
+
+    </section>
+
+
+    <section class="stanza">
+
+        <p>
+            Porque mañana volveré a amarte.
+            <br><br>
+
+            Y después también.
+            <br><br>
+
+            Y al día siguiente.
+            <br><br>
+
+            Y cuando llegue otra noche<br>
+            y vuelva a escribirte,<br>
+            quizás encuentre nuevas palabras,<br>
+            nuevos cielos,<br>
+            nuevas maneras de llamarte...
+        </p>
+
+        <strong>
+            pero habrá algo que nunca cambiará:
+        </strong>
+
+        <p>
+            en todas mis noches,<br>
+            de alguna manera,<br>
+            <strong style="margin-top:20px;">
+                siempre estarás tú. ✦
+            </strong>
+        </p>
+
+    </section>
+
+</main>
+
+</body>
+  </html>
